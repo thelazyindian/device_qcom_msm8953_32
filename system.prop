@@ -1,5 +1,5 @@
 #
-# system.prop for msm8952_32
+# system.prop for titanium_32
 #
 
 #rild.libpath=/system/lib/libreference-ril.so
@@ -107,7 +107,7 @@ ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
-#Set for msm8952
+#Set for titanium
 tunnel.audio.encode = false
 #Buffer size in kbytes for compress offload playback
 audio.offload.buffer.size.kb=64

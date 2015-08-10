@@ -1,7 +1,7 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8952_32/overlay
+DEVICE_PACKAGE_OVERLAYS := device/qcom/titanium_32/overlay
 
 TARGET_USES_QCOM_BSP := true
-ifeq ($(TARGET_PRODUCT),msm8952_32)
+ifeq ($(TARGET_PRODUCT),titanium_32)
 TARGET_USES_QCA_NFC := other
 endif
 
@@ -11,15 +11,15 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
-# media_profiles and media_codecs xmls for msm8952
+# media_profiles and media_codecs xmls for titanium
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
-PRODUCT_COPY_FILES += device/qcom/msm8952_32/media/media_profiles_8952.xml:system/etc/media_profiles.xml \
-                      device/qcom/msm8952_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
-                      device/qcom/msm8952_32/media/media_codecs_8952.xml:system/etc/media_codecs.xml \
-                      device/qcom/msm8952_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
+PRODUCT_COPY_FILES += device/qcom/titanium_32/media/media_profiles_titanium.xml:system/etc/media_profiles.xml \
+                      device/qcom/titanium_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
+                      device/qcom/titanium_32/media/media_codecs_titanium.xml:system/etc/media_codecs.xml \
+                      device/qcom/titanium_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
 endif
 
-PRODUCT_COPY_FILES += device/qcom/msm8952_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
+PRODUCT_COPY_FILES += device/qcom/titanium_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapgrowthlimit=128m \
@@ -27,8 +27,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapstartsize=14m
 $(call inherit-product, device/qcom/common/common.mk)
 
-PRODUCT_NAME := msm8952_32
-PRODUCT_DEVICE := msm8952_32
+PRODUCT_NAME := titanium_32
+PRODUCT_DEVICE := titanium_32
 
 ifeq ($(strip $(TARGET_USES_QTIC)),true)
 # font rendering engine feature switch
@@ -50,27 +50,27 @@ endif
 
 # Audio configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_32/audio_policy.conf:system/etc/audio_policy.conf \
-    device/qcom/msm8952_32/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
-    device/qcom/msm8952_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/qcom/msm8952_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
-    device/qcom/msm8952_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
-    device/qcom/msm8952_32/mixer_paths.xml:system/etc/mixer_paths.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
-    device/qcom/msm8952_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    device/qcom/msm8952_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
-    device/qcom/msm8952_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
-    device/qcom/msm8952_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
-    device/qcom/msm8952_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/qcom/msm8952_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
+    device/qcom/titanium_32/audio_policy.conf:system/etc/audio_policy.conf \
+    device/qcom/titanium_32/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
+    device/qcom/titanium_32/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/qcom/titanium_32/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_skuh.xml:system/etc/mixer_paths_qrd_skuh.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_skui.xml:system/etc/mixer_paths_qrd_skui.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_skuhf.xml:system/etc/mixer_paths_qrd_skuhf.xml \
+    device/qcom/titanium_32/mixer_paths_wcd9306.xml:system/etc/mixer_paths_wcd9306.xml \
+    device/qcom/titanium_32/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_skum.xml:system/etc/mixer_paths_qrd_skum.xml \
+    device/qcom/titanium_32/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/qcom/titanium_32/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/qcom/titanium_32/sound_trigger_mixer_paths_wcd9306.xml:system/etc/sound_trigger_mixer_paths_wcd9306.xml \
+    device/qcom/titanium_32/sound_trigger_mixer_paths_wcd9330.xml:system/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    device/qcom/titanium_32/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
+    device/qcom/titanium_32/mixer_paths_wcd9330.xml:system/etc/mixer_paths_wcd9330.xml \
+    device/qcom/titanium_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
+    device/qcom/titanium_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
+    device/qcom/titanium_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/qcom/titanium_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
 
 # ANT+ stack
 PRODUCT_PACKAGES += \
@@ -114,7 +114,7 @@ PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 endif # TARGET_USES_QCA_NFC
 
-# Feature definition files for msm8952
+# Feature definition files for titanium
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -142,13 +142,13 @@ PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_32/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
+    device/qcom/titanium_32/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8952_32/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/qcom/msm8952_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
-    device/qcom/msm8952_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
+    device/qcom/titanium_32/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/titanium_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
+    device/qcom/titanium_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
 
 
 PRODUCT_PACKAGES += \
@@ -172,4 +172,4 @@ endif
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
-     device/qcom/msm8952_32/sensors/hals.conf:system/etc/sensors/hals.conf
+     device/qcom/titanium_32/sensors/hals.conf:system/etc/sensors/hals.conf

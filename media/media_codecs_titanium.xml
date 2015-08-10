@@ -81,7 +81,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <!--
-  Decoder capabilities for 8952
+  Decoder capabilities for titanium
 _________________________________________________________________
   | Codec    | W       H       fps     Mbps    MB/s    | Encode Secure-dec |
   |__________|_________________________________________|___________________|
@@ -99,7 +99,7 @@ _________________________________________________________________
 -->
 
 <!--
-  Encoder capabilities for 8952
+  Encoder capabilities for titanium
    ____________________________________________________
   | Codec    | W       H       fps     Mbps    MB/s    |
   |__________|_________________________________________|
