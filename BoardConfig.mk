@@ -37,7 +37,7 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
-BOOTLOADER_PLATFORM := titanium# use titanium LK configuration
+BOOTLOADER_PLATFORM := msmtitanium# use titanium LK configuration
 
 # Enables CSVT
 TARGET_USES_CSVT := true
@@ -80,7 +80,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_USES_AOSP := true
+#TARGET_USES_AOSP := true
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000
 BOARD_KERNEL_SEPARATED_DT := true
 

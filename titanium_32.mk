@@ -46,6 +46,8 @@ ifneq ($(strip $(QCPATH)),)
     PRODUCT_BOOT_JARS += qcom.fmradio
     PRODUCT_BOOT_JARS += WfdCommon
     PRODUCT_BOOT_JARS += oem-services
+    PRODUCT_BOOT_JARS += tcmiface
+    PRODUCT_BOOT_JARS += dpmapi
 endif
 
 # Audio configuration file
@@ -173,3 +175,6 @@ endif
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
      device/qcom/titanium_32/sensors/hals.conf:system/etc/sensors/hals.conf
+
+# Disable Verity boot feature
+PRODUCT_SUPPORTS_VERITY := false
