@@ -1,12 +1,10 @@
 DEVICE_PACKAGE_OVERLAYS := device/qcom/titanium_32/overlay
 
 TARGET_USES_QCOM_BSP := true
-ifeq ($(TARGET_PRODUCT),titanium_32)
-TARGET_USES_QCA_NFC := other
-endif
 
 # Add QC Video Enhancements flag
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
+TARGET_USES_NQ_NFC := false
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
@@ -83,38 +81,41 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
-# NFC packages
-ifeq ($(TARGET_USES_QCA_NFC),true)
-NFC_D := true
-
-ifeq ($(NFC_D), true)
-    PRODUCT_PACKAGES += \
-        libnfcD-nci \
-        libnfcD_nci_jni \
-        nfc_nci.msm8916 \
-        NfcDNci \
-        Tag \
-        com.android.nfc_extras \
-        com.android.nfc.helper
-else
-    PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    nfc_nci.msm8916 \
-    NfcNci \
+# NFC
+ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
+PRODUCT_PACKAGES += \
+    NQNfcNci \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    nfc_nci.nqx.default \
+    libp61-jcop-kit \
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    libpn547_fw.so \
+    libpn548ad_fw.so \
+    libnfc-brcm.conf \
+    libnfc-nxp.conf \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
     Tag \
-    com.android.nfc_extras
-endif
+    com.android.nfc_extras \
+    libQPayJNI \
+    com.android.qti.qpay \
+    com.android.qti.qpay.xml \
+    SmartcardService \
+    org.simalliance.openmobileapi \
+    org.simalliance.openmobileapi.xml
 
-# file that declares the MIFARE NFC constant
-# Commands to migrate prefs from com.android.nfc3 to com.android.nfc
-# NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
-        packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
-        frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
-        frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
-endif # TARGET_USES_QCA_NFC
+    packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
+    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+
+# SmartcardService, SIM1,SIM2,eSE1 not including eSE2,SD1 as default
+ADDITIONAL_BUILD_PROPERTIES += persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+endif # TARGET_USES_NQ_NFC
 
 # Feature definition files for titanium
 PRODUCT_COPY_FILES += \
