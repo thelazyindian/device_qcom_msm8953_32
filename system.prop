@@ -160,10 +160,18 @@ persist.debug.coresight.config=stm-events
 ro.vendor.gt_library=libqti-gt.so
 
 #property to enable narrow search range for video encoding
-vidc.enc.narrow.searchrange=1
 vidc.enc.disable_bframes=1
 vidc.dec.downscalar_width=2560
 vidc.dec.downscalar_height=1600
+
+# Additional buffers shared between Camera and Video
+vidc.enc.dcvs.extra-buff-count=2
+
+# system property to accelerate Progressive Download using STA
+persist.mm.sta.enable=0
+
+# Set default power mode to low power for encoder
+vidc.debug.perf.mode=2
 
 #property to enable fingerprint
 persist.qfp=false
