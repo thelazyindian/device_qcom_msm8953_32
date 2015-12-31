@@ -48,8 +48,8 @@
         <usecase name="USECASE_VOICEMMODE2_CALL" type="in" id="36"/>
         <usecase name="USECASE_VOICEMMODE2_CALL" type="out" id="36"/>
     </pcm_ids>
-    <native_configs>
-        <feature name="NATIVE_AUDIO_44.1" codec_support="1"/>
-    </native_configs>
+    <config_params>
+        <param key="native_audio_mode" value="true"/>
+    </config_params>
 </audio_platform_info>
 
