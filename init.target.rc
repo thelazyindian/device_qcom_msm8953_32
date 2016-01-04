@@ -190,6 +190,7 @@ on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
     setprop persist.sys.usb.config mass_storage
+    start hvdcp_opti
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
@@ -203,6 +204,11 @@ service imsdatadaemon /system/bin/imsdatadaemon
     socket ims_datad stream 0660 system radio
     group system wifi radio inet net_raw log diag net_admin
     disabled
+
+service hvdcp_opti /system/bin/hvdcp_opti
+    class main
+    user root
+    group root
 
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
