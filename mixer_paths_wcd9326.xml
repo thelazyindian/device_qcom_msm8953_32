@@ -113,19 +113,19 @@
     <ctl name="MultiMedia1 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia1 Mixer SLIM_4_TX" value="0" />
     <ctl name="MultiMedia1 Mixer INTERNAL_BT_SCO_TX" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia1" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia2" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia3" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia5" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia7" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia10" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia11" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia12" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia13" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia14" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia15" value="0" />
-    <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia10" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia11" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia12" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia13" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia14" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia15" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia16" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="0" />
@@ -292,11 +292,12 @@
     <ctl name="AIF1_CAP Mixer SLIM TX1" value="0"/>
     <ctl name="AIF1_CAP Mixer SLIM TX0" value="0"/>
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="0" />
-    <ctl name="HDMI Mixer MultiMedia4" value="0" />
+    <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="0" />
     <!-- echo reference -->
     <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
     <!-- usb headset -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia7" value="0" />
@@ -513,7 +514,7 @@
         <ctl name="GSM mode Enable" value="ON" />
     </path>
 
-    <path name="echo-reference speaker-vbat-mono">
+    <path name="echo-reference vbat-speaker-mono">
         <ctl name="VOC_EXT_EC MUX" value="SLIM_1_TX" />
         <ctl name="AIF3_CAP Mixer SLIM TX1" value="1" />
         <ctl name="SLIM TX1 MUX" value="RX_MIX_TX1" />
@@ -521,7 +522,7 @@
         <ctl name="SLIM_1_TX Channels" value="One" />
    </path>
 
-   <path name="echo-reference speaker-vbat">
+   <path name="echo-reference vbat-speaker">
         <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_1_TX" />
         <ctl name="AIF3_CAP Mixer SLIM TX1" value="1" />
         <ctl name="AIF3_CAP Mixer SLIM TX2" value="1" />
@@ -545,7 +546,7 @@
     </path>
 
     <path name="deep-buffer-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback speaker-and-hdmi">
@@ -593,7 +594,7 @@
     </path>
 
     <path name="low-latency-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback bt-sco">
@@ -637,7 +638,7 @@
     </path>
 
     <path name="multi-channel-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia2" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia2" value="1" />
     </path>
 
     <path name="multi-channel-playback afe-proxy">
@@ -669,6 +670,15 @@
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia3" value="1" />
     </path>
 
+    <path name="audio-ull-playback hdmi">
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia3" value="1" />
+    </path>
+
+    <path name="audio-ull-playback speaker-and-hdmi">
+        <path name="audio-ull-playback hdmi" />
+        <path name="audio-ull-playback" />
+    </path>
+
     <path name="audio-ull-playback usb-headphones">
         <path name="audio-ull-playback afe-proxy" />
     </path>
@@ -687,7 +697,7 @@
     </path>
 
     <path name="compress-offload-playback hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="compress-offload-playback bt-sco">
@@ -731,7 +741,7 @@
     </path>
 
     <path name="compress-offload-playback2 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia7" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
     <path name="compress-offload-playback2 bt-sco">
@@ -779,7 +789,7 @@
     </path>
 
     <path name="compress-offload-playback3 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia10" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
     <path name="compress-offload-playback3 bt-sco">
@@ -823,7 +833,7 @@
     </path>
 
     <path name="compress-offload-playback4 hdmi">
-        <ctl name="HDMI Mixer MultiMedia11" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
     <path name="compress-offload-playback4 bt-sco">
@@ -867,7 +877,7 @@
     </path>
 
     <path name="compress-offload-playback5 hdmi">
-        <ctl name="HDMI Mixer MultiMedia12" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
     <path name="compress-offload-playback5 bt-sco">
@@ -911,7 +921,7 @@
     </path>
 
     <path name="compress-offload-playback6 hdmi">
-        <ctl name="HDMI Mixer MultiMedia13" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
     <path name="compress-offload-playback6 bt-sco">
@@ -955,7 +965,7 @@
     </path>
 
     <path name="compress-offload-playback7 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia14" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="compress-offload-playback7 bt-sco">
@@ -999,7 +1009,7 @@
     </path>
 
     <path name="compress-offload-playback8 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia15" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
     <path name="compress-offload-playback8 bt-sco">
@@ -1043,7 +1053,7 @@
     </path>
 
     <path name="compress-offload-playback9 hdmi">
-        <ctl name="MI2S_HDMI_RX Audio Mixer MultiMedia16" value="1" />
+        <ctl name="QUIN_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
     <path name="compress-offload-playback9 bt-sco">
@@ -1174,8 +1184,8 @@
         <ctl name="Voice2_Tx Mixer SLIM_0_TX_Voice2" value="1" />
     </path>
 
-    <path name="voice-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="voice-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="voice-call"/>
     </path>
 
@@ -1204,8 +1214,8 @@
         <ctl name="Voice2_Tx Mixer AFE_PCM_TX_Voice2" value="1" />
     </path>
 
-    <path name="voice2-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="voice2-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="voice2-call"/>
     </path>
 
@@ -1380,8 +1390,8 @@
         <ctl name="VoLTE_Tx Mixer AFE_PCM_TX_VoLTE" value="1" />
     </path>
 
-    <path name="volte-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="volte-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="volte-call"/>
     </path>
 
@@ -1411,8 +1421,8 @@
         <ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="1" />
     </path>
 
-    <path name="compress-voip-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="compress-voip-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="compress-voip-call"/>
     </path>
 
@@ -1446,8 +1456,8 @@
         <ctl name="VoWLAN_Tx Mixer AFE_PCM_TX_VoWLAN" value="1" />
     </path>
 
-    <path name="vowlan-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="vowlan-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="vowlan-call"/>
     </path>
 
@@ -1481,8 +1491,8 @@
         <ctl name="VoiceMMode1_Tx Mixer AFE_PCM_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="voicemmode1-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="voicemmode1-call"/>
     </path>
 
@@ -1516,8 +1526,8 @@
         <ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="1" />
     </path>
 
-    <path name="voicemmode2-call voice-speaker-vbat">
-        <path name="echo-reference speaker-vbat-mono" />
+    <path name="voicemmode2-call vbat-voice-speaker">
+        <path name="echo-reference vbat-speaker-mono" />
         <path name="voicemmode2-call"/>
     </path>
 
@@ -1654,7 +1664,7 @@
         <ctl name="IIR0 INP0 MUX" value="DEC7" />
     </path>
 
-    <path name="speaker-wsa">
+    <path name="wsa-speaker">
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM RX1 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM_0_RX Channels" value="Two" />
@@ -1670,7 +1680,7 @@
         <ctl name="SpkrRight SWR DAC_Port Switch" value="1" />
     </path>
 
-    <path name="speaker-wsa-mono">
+    <path name="wsa-speaker-mono">
         <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RX INT7_1 MIX1 INP0" value="RX0" />
@@ -1681,13 +1691,13 @@
     </path>
 
 
-   <path name="speaker-vbat-mono">
-       <path name="speaker-wsa-mono" />
+   <path name="vbat-speaker-mono">
+       <path name="wsa-speaker-mono" />
        <ctl name="RX INT7 VBAT SPKRL VBAT Enable" value="1" />
    </path>
 
-   <path name="speaker-vbat">
-       <path name="speaker-wsa" />
+   <path name="vbat-speaker">
+       <path name="wsa-speaker" />
        <ctl name="RX INT7 VBAT SPKRL VBAT Enable" value="1" />
        <ctl name="RX INT8 VBAT SPKRR VBAT Enable" value="1" />
    </path>
@@ -1727,7 +1737,7 @@
         <ctl name="AIF4_VI Mixer SPKR_VI_1" value="1" />
         <ctl name="AIF4_VI Mixer SPKR_VI_2" value="1" />
         <ctl name="SLIM_4_TX Format" value="PACKED_16B" />
-        <path name="speaker-wsa" />
+        <path name="wsa-speaker" />
         <ctl name="VI_FEED_TX Channels" value="Two" />
         <ctl name="SLIM0_RX_VI_FB_LCH_MUX"  value="SLIM4_TX" />
         <ctl name="SLIM0_RX_VI_FB_RCH_MUX"  value="SLIM4_TX" />
@@ -1736,7 +1746,7 @@
     <path name="voice-speaker-protected">
         <ctl name="AIF4_VI Mixer SPKR_VI_1" value="1" />
         <ctl name="SLIM_4_TX Format" value="PACKED_16B" />
-        <path name="speaker-wsa-mono" />
+        <path name="wsa-speaker-mono" />
         <ctl name="VI_FEED_TX Channels" value="One" />
         <ctl name="SLIM0_RX_VI_FB_LCH_MUX"  value="SLIM4_TX" />
     </path>
@@ -1836,16 +1846,16 @@
         <path name="handset" />
     </path>
 
-    <path name="voice-speaker-vbat">
-        <path name="speaker-vbat-mono" />
+    <path name="vbat-voice-speaker">
+        <path name="vbat-speaker-mono" />
     </path>
 
-    <path name="voice-speaker-wsa">
-        <path name="speaker-wsa-mono" />
+    <path name="wsa-voice-speaker">
+        <path name="wsa-speaker-mono" />
     </path>
 
     <path name="voice-speaker">
-        <path name="speaker-wsa-mono" />
+        <path name="wsa-speaker-mono" />
     </path>
 
     <path name="voice-speaker-mic">
@@ -1887,12 +1897,12 @@
     </path>
 
     <path name="speaker-and-usb-headphones">
-        <path name="speaker-wsa" />
+        <path name="wsa-speaker" />
         <path name="usb-headphones" />
     </path>
 
     <path name="speaker-and-hdmi">
-        <path name="speaker-wsa" />
+        <path name="wsa-speaker" />
         <path name="hdmi" />
     </path>
 
