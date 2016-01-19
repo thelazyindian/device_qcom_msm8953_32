@@ -39,8 +39,7 @@ on post-fs
     export LD_PRELOAD libNimsWrap.so
 
 on fs
-    wait /dev/block/platform/soc.0/7824900.sdhci/mmcblk0
-    symlink /dev/block/platform/soc.0/7824900.sdhci /dev/block/bootdevice
+    wait /dev/block/bootdevice
     mount_all fstab.qcom
 
     # Keeping following partitions outside fstab file. As user may not have
@@ -72,6 +71,7 @@ on post-fs-data
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
+    mkdir /data/misc/hbtp 0750 system system
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -229,6 +229,12 @@ service imscmservice /system/bin/imscmservice
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start imscmservice
+
+service hbtp /system/vendor/bin/hbtp_daemon
+    class main
+    user system
+    group system
+    disabled
 
 service dts_configurator /system/bin/dts_configurator
     class late_start
