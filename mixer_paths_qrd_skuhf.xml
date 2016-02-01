@@ -81,7 +81,6 @@
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
     <ctl name="SPK" value="ZERO" />
-    <ctl name="Speaker Boost" value="DISABLE" />
     <ctl name="MICBIAS CAPLESS Switch" value="0" />
     <ctl name="EAR PA Boost" value="DISABLE" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
