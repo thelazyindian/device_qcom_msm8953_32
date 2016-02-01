@@ -172,7 +172,7 @@ ro.vendor.gt_library=libqti-gt.so
 #property to enable narrow search range for video encoding
 vidc.enc.disable_bframes=1
 vidc.dec.downscalar_width=1920
-vidc.dec.downscalar_height=1080
+vidc.dec.downscalar_height=1088
 
 # Additional buffers shared between Camera and Video
 vidc.enc.dcvs.extra-buff-count=2
