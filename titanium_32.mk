@@ -12,9 +12,8 @@ TARGET_USES_NQ_NFC := true
 # media_profiles and media_codecs xmls for titanium
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/titanium_32/media/media_profiles_titanium.xml:system/etc/media_profiles.xml \
-                      device/qcom/titanium_32/media/media_profiles_8956.xml:system/etc/media_profiles_8956.xml \
                       device/qcom/titanium_32/media/media_codecs_titanium.xml:system/etc/media_codecs.xml \
-                      device/qcom/titanium_32/media/media_codecs_8956.xml:system/etc/media_codecs_8956.xml
+                      device/qcom/titanium_32/media/media_codecs_performance_titanium.xml:system/etc/media_codecs_performance.xml
 endif
 
 PRODUCT_COPY_FILES += device/qcom/titanium_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
