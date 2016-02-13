@@ -81,9 +81,6 @@ PRODUCT_PACKAGES += \
     libantradio \
     antradio_app
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
 # NFC
 ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_PACKAGES += \
