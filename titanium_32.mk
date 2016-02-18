@@ -70,7 +70,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/titanium_32/mixer_paths_wcd9335.xml:system/etc/mixer_paths_wcd9335.xml \
     device/qcom/titanium_32/mixer_paths_wcd9326.xml:system/etc/mixer_paths_wcd9326.xml \
     device/qcom/titanium_32/mixer_paths_qrd_skun.xml:system/etc/mixer_paths_qrd_skun.xml \
-    device/qcom/titanium_32/mixer_paths_qrd_sku3.xml:system/etc/mixer_paths_qrd_skun.xml \
+    device/qcom/titanium_32/mixer_paths_qrd_sku3.xml:system/etc/mixer_paths_qrd_sku3.xml \
     device/qcom/titanium_32/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     device/qcom/titanium_32/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
 
