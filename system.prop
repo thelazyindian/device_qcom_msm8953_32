@@ -181,9 +181,6 @@ vidc.enc.dcvs.extra-buff-count=2
 # system property to accelerate Progressive Download using STA
 persist.mm.sta.enable=0
 
-# Set default power mode to low power for encoder
-vidc.debug.perf.mode=2
-
 #property to enable fingerprint
 persist.qfp=false
 
