@@ -53,7 +53,8 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_HARDWARE_3D := false
 TARGET_BOARD_PLATFORM := titanium
-TARGET_BOOTLOADER_BOARD_NAME := titanium
+# This value will be shown on fastboot menu
+TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
