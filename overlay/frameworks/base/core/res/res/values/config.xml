@@ -65,7 +65,7 @@
    <bool name="config_enablePerfBoostForAnimation">true</bool>
    <integer name="animationboost_timeout_param">600</integer>
    <integer-array name="animationboost_param_value">
-       <item>0x40800000</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
+       <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
        <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value-->
    </integer-array>
    <!-- Indicate whether to allow the device to suspend when the screen is off
