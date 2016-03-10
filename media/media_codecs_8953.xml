@@ -81,7 +81,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <!--
-  Decoder capabilities for titanium
+  Decoder capabilities for msm8953
    __________ _________________________________________ ___________________
   | Codec    | W       H       fps     Mbps    MB/s    | Encode Secure-dec |
   |__________|_________________________________________|___________________|
@@ -100,7 +100,7 @@ Only the three quirks included above are recognized at this point:
 -->
 
 <!--
-  Encoder capabilities for titanium
+  Encoder capabilities for msm8953
    ____________________________________________________
   | Codec    | W       H       fps     Mbps    MB/s    |
   |__________|_________________________________________|
