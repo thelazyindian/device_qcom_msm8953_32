@@ -209,6 +209,10 @@ ro.sys.fw.bservice_enable=true
 ro.sys.fw.bservice_limit=5
 ro.sys.fw.bservice_age=5000
 
+#Memperf properties
+ro.memperf.lib=libmemperf.so
+ro.memperf.enable=true
+
 #Trim properties
 ro.sys.fw.use_trim_settings=true
 ro.sys.fw.empty_app_percent=50
