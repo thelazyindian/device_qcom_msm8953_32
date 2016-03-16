@@ -19,7 +19,8 @@ PRODUCT_COPY_FILES += device/qcom/msm8953_32/media/media_profiles_8953.xml:syste
                       device/qcom/msm8953_32/media/media_codecs_performance_8953.xml:system/etc/media_codecs_performance.xml
 endif
 
-PRODUCT_COPY_FILES += device/qcom/msm8953_32/whitelistedapps.xml:system/etc/whitelistedapps.xml
+PRODUCT_COPY_FILES += device/qcom/msm8953_32/whitelistedapps.xml:system/etc/whitelistedapps.xml \
+                      device/qcom/msm8953_32/gamedwhitelist.xml:system/etc/gamedwhitelist.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
        dalvik.vm.heapminfree=6m \

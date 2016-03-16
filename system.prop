@@ -108,6 +108,9 @@ persist.debug.coresight.config=stm-events
 ro.vendor.gt_library=libqti-gt.so
 ro.vendor.at_library=libqti-at.so
 
+#property for game detection feature
+debug.enable.gamed=0
+
 #property to enable narrow search range for video encoding
 vidc.enc.disable_bframes=1
 vidc.dec.downscalar_width=1920
