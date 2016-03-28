@@ -1835,8 +1835,8 @@
         <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
         <ctl name="RX0 Digital Volume" value="81" />
         <ctl name="ANC Slot" value="6" />
-        <ctl name="ADC MUX6" value="DMIC" />
-        <ctl name="DMIC MUX6" value="DMIC3" />
+        <ctl name="ADC MUX10" value="DMIC" />
+        <ctl name="DMIC MUX10" value="DMIC3" />
         <ctl name="ANC0 FB MUX" value="ANC_IN_EAR" />
         <ctl name="ANC EAR Enable Switch" value="1" />
     </path>
