@@ -1,5 +1,5 @@
 #
-# system.prop for titanium_32
+# system.prop for msm8953_32
 #
 
 #rild.libpath=/system/lib/libreference-ril.so
@@ -106,6 +106,7 @@ persist.debug.coresight.config=stm-events
 
 #property for vendor specific library
 ro.vendor.gt_library=libqti-gt.so
+ro.vendor.at_library=libqti-at.so
 
 #property to enable narrow search range for video encoding
 vidc.enc.disable_bframes=1
@@ -143,6 +144,10 @@ ro.sys.fw.bservice_enable=true
 ro.sys.fw.bservice_limit=5
 ro.sys.fw.bservice_age=5000
 
+#Memperf properties
+ro.memperf.lib=libmemperf.so
+ro.memperf.enable=true
+
 #Trim properties
 ro.sys.fw.use_trim_settings=true
 ro.sys.fw.empty_app_percent=50
@@ -156,11 +161,24 @@ ro.am.reschedule_service=true
 #Optimal dex2oat threads for faster app installation
 ro.sys.fw.dex2oat_thread_count=4
 
-# set cutoff voltage to 3200mV
-ro.cutoff_voltage_mv=3200
+# Create zram disk
+ro.config.zram=true
+
+# set cutoff voltage to 3400mV
+ro.cutoff_voltage_mv=3400
 
 #set device emmc size
 ro.emmc_size=16GB
 
 #force HAL1 for below packages
 camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+
+#Enable FR27607-RIL to send ONLINE cmd in bootup
+persist.radio.poweron_opt=1
+
+#low power mode for camera
+camera.lowpower.record.enable=1
+
+#properties for limiting preview size in camera
+camera.display.umax=1920x1080
+camera.display.lmax=1280x720

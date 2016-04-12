@@ -24,7 +24,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 BOARD_USES_GENERIC_AUDIO := true
 
--include $(QCPATH)/common/titanium_32/BoardConfigVendor.mk
+-include $(QCPATH)/common/msm8953_32/BoardConfigVendor.mk
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_APPEND_DTB := true
 #TODO: Fix-me: Setting TARGET_HAVE_HDMI_OUT to false
@@ -37,7 +37,7 @@ TARGET_NO_KERNEL := false
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_RPC := true
 BOOTLOADER_GCC_VERSION := arm-eabi-4.8
-BOOTLOADER_PLATFORM := msmtitanium# use titanium LK configuration
+BOOTLOADER_PLATFORM := msm8953# use msm8953 LK configuration
 
 # Enables CSVT
 TARGET_USES_CSVT := true
@@ -52,8 +52,9 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_HARDWARE_3D := false
-TARGET_BOARD_PLATFORM := titanium
-TARGET_BOOTLOADER_BOARD_NAME := titanium
+TARGET_BOARD_PLATFORM := msm8953
+# This value will be shown on fastboot menu
+TARGET_BOOTLOADER_BOARD_NAME := QC_Reference_Phone
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
@@ -77,23 +78,29 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Use signed boot and recovery image
 #TARGET_BOOTIMG_SIGNED := true
 
+# Enable MDTP for recovery
+TARGET_USE_MDTP := true
+
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 #TARGET_USES_AOSP := true
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 zcache.enabled=1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000
 BOARD_KERNEL_SEPARATED_DT := true
 
-BOARD_EGL_CFG := device/qcom/titanium_32/egl.cfg
+BOARD_EGL_CFG := device/qcom/msm8953_32/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 10737418240
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 10536091648
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
+BOARD_OEMIMAGE_PARTITION_SIZE := 268435456
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
+# Disable the init blank to avoid flicker
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 
 # Add NON-HLOS files for ota upgrade
 ADD_RADIO_FILES ?= true
@@ -108,7 +115,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-#Add support for firmare upgrade on titanium
+#Add support for firmare upgrade on msm8953
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 
 #add suffix variable to uniquely identify the board

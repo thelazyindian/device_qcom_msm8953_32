@@ -40,8 +40,10 @@ ifeq ($(KERNEL_DEFCONFIG),)
       KERNEL_DEFCONFIG := msmcortex_defconfig
     endif
 endif
-
-include kernel/AndroidKernel.mk
+ifeq ($(TARGET_KERNEL_SOURCE),)
+     TARGET_KERNEL_SOURCE := kernel
+endif
+include $(TARGET_KERNEL_SOURCE)/AndroidKernel.mk
 
 $(INSTALLED_KERNEL_TARGET): $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(transform-prebuilt-to-target)
@@ -97,6 +99,14 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := synaptics_rmi4_i2c.kl
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := $(LOCAL_MODULE)
+LOCAL_MODULE_PATH  := $(TARGET_OUT_KEYLAYOUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := synaptics_dsxv26.kl
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := $(LOCAL_MODULE)
