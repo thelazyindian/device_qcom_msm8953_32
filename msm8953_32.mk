@@ -9,6 +9,9 @@ TARGET_KERNEL_VERSION := 3.18
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
+# Enable features in video HAL that can compile only on this platform
+TARGET_USES_MEDIA_EXTENSIONS := true
+
 # media_profiles and media_codecs xmls for msm8953
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += device/qcom/msm8953_32/media/media_profiles_8953.xml:system/etc/media_profiles.xml \
