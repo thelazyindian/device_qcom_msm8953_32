@@ -146,7 +146,7 @@ ro.sys.fw.bservice_age=5000
 
 #Memperf properties
 ro.memperf.lib=libmemperf.so
-ro.memperf.enable=true
+ro.memperf.enable=false
 
 #Trim properties
 ro.sys.fw.use_trim_settings=true
