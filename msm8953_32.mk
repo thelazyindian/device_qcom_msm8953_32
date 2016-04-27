@@ -1,10 +1,11 @@
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
+#DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
 
 TARGET_USES_QCOM_BSP := true
 
 # Add QC Video Enhancements flag
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_NQ_NFC := true
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+TARGET_USES_NQ_NFC := false
+TARGET_USES_QTIC := false	
 TARGET_KERNEL_VERSION := 3.18
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
@@ -36,16 +37,16 @@ ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
 endif
 endif
 
-PRODUCT_BOOT_JARS += qcmediaplayer \
+#PRODUCT_BOOT_JARS += qcmediaplayer \
                      vcard \
                      com.qti.dpmframework
 ifneq ($(strip $(QCPATH)),)
-    PRODUCT_BOOT_JARS += qcom.fmradio
+ #   PRODUCT_BOOT_JARS += qcom.fmradio
     PRODUCT_BOOT_JARS += WfdCommon
     PRODUCT_BOOT_JARS += oem-services
     PRODUCT_BOOT_JARS += tcmiface
-    PRODUCT_BOOT_JARS += dpmapi
-    PRODUCT_BOOT_JARS += com.qti.location.sdk
+  #  PRODUCT_BOOT_JARS += dpmapi
+   # PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
 # Audio configuration file
@@ -116,7 +117,7 @@ PRODUCT_PACKAGES += oem-services
 PRODUCT_PACKAGES += libsubsystem_control
 PRODUCT_PACKAGES += libSubSystemShutdown
 
-PRODUCT_PACKAGES += wcnss_service
+#PRODUCT_PACKAGES += wcnss_service
 
 # MSM IRQ Balancer configuration file
 PRODUCT_COPY_FILES += \

@@ -61,7 +61,7 @@ BOARD_KERNEL_PAGESIZE    := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_USES_UNCOMPRESSED_KERNEL := false
-
+USE_CLANG_PLATFORM_BUILD := true
 # Enables Adreno RS driver
 #OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
@@ -85,8 +85,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 #TARGET_USES_AOSP := true
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000
-BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 androidboot.selinux=permissive
+#BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_EGL_CFG := device/qcom/msm8953_32/egl.cfg
 
@@ -122,12 +122,12 @@ HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE := true
 TARGET_BOARD_SUFFIX := _32
 
 #Use dlmalloc instead of jemalloc for mallocs
-MALLOC_IMPL := dlmalloc
-
+#MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 TARGET_LDPRELOAD := libNimsWrap.so
 
 #Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 #Enabling IMS Feature
@@ -155,4 +155,4 @@ ifneq ($(TARGET_USES_AOSP),true)
   endif
 endif
 
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+#BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
