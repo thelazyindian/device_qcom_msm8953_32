@@ -48,18 +48,18 @@
        <item>0x40C00000</item> <!-- SCHEDBOOST resource opcode-->
        <item>0x1</item>        <!-- SCHEDBOOST resource value-->
        <item>0x40800100</item> <!-- CPUBOOST_MIN_FREQ resource opcode-->
-       <item>0x578</item>      <!-- CPUBOOST MIN_FREQ resource value-->
-       <item>0x40400000</item> <!-- DISABLE_POWER_COLLAPSE resource opcode-->
-       <item>0x1</item>        <!-- DISABLE_POWER_COLLAPSE resource value-->
-   </integer-array>
-   <!-- Whether packing disable is enabled.  -->
-   <bool name="config_disablePacking">true</bool>
-   <integer name="disablepacking_timeout_param">2000</integer>
-   <integer-array name="launchboost_packing_param_value">
+       <item>0x690</item>      <!-- CPUBOOST MIN_FREQ resource value-->
        <item>0x40C2C000</item> <!-- SCHED_SPILL_NR_RUN resource opcode -->
        <item>0x1</item>        <!-- SCHED_SPILL_NR_RUN resource value -->
        <item>0x40C34000</item> <!-- SCHED_RESTRICT_CLUSTER_SPILL resource opcode -->
        <item>0x0</item>        <!-- SCHED_RESTRICT_CLUSTER_SPILL resource value -->
+   </integer-array>
+   <!-- Whether packing disable is enabled.  -->
+   <bool name="config_disablePacking">true</bool>
+   <integer name="disablepacking_timeout_param">1500</integer>
+   <integer-array name="launchboost_packing_param_value">
+       <item>0x40400000</item> <!-- DISABLE_POWER_COLLAPSE resource opcode-->
+       <item>0x1</item>        <!-- DISABLE_POWER_COLLAPSE resource value-->
    </integer-array>
    <!-- Whether cpu boost is enabled for animation during exit and entry -->
    <bool name="config_enablePerfBoostForAnimation">true</bool>
