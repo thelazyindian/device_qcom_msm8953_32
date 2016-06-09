@@ -117,6 +117,8 @@ PRODUCT_BOOT_JARS += telephony-ext
 #PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
 #        $(QCPATH)/qrdplus/globalization/multi-language/res-overlay \
 #        $(PRODUCT_PACKAGE_OVERLAYS)
+PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
+        $(PRODUCT_PACKAGE_OVERLAYS)
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
