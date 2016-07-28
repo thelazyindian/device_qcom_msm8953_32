@@ -128,3 +128,16 @@ PRODUCT_COPY_FILES += \
 # Disable Verity boot feature
 PRODUCT_SUPPORTS_VERITY := true
 
+# Enable logdumpd service only for non-perf bootimage
+ifeq ($(findstring perf,$(KERNEL_DEFCONFIG)),)
+    ifeq ($(TARGET_BUILD_VARIANT),user)
+        PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
+            ro.logdumpd.enabled=0
+    else
+        PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
+            ro.logdumpd.enabled=1
+    endif
+else
+    PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
+        ro.logdumpd.enabled=0
+endif
