@@ -121,6 +121,10 @@ PRODUCT_BOOT_JARS += telephony-ext
 PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
 
+#for android_filesystem_config.h
+PRODUCT_PACKAGES += \
+    fs_config_files
+
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
      device/qcom/msm8953_32/sensors/hals.conf:system/etc/sensors/hals.conf
