@@ -85,6 +85,8 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000
 #BOARD_KERNEL_SEPARATED_DT := true
 
+BOARD_SECCOMP_POLICY := device/qcom/$(TARGET_BOARD_PLATFORM)/seccomp
+
 BOARD_EGL_CFG := device/qcom/msm8953_32/egl.cfg
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x02000000
@@ -120,7 +122,7 @@ TARGET_BOARD_SUFFIX := _32
 
 #Use dlmalloc instead of jemalloc for mallocs
 #MALLOC_IMPL := dlmalloc
-MALLOC_SVELTE := true
+#MALLOC_SVELTE := true
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
