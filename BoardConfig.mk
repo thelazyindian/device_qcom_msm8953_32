@@ -111,7 +111,6 @@ ADD_RADIO_FILES ?= true
 PROTOBUF_SUPPORTED := false
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-TARGET_USES_QCOM_BSP := true
 
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm
@@ -127,8 +126,15 @@ TARGET_BOARD_SUFFIX := _32
 #MALLOC_IMPL := dlmalloc
 #MALLOC_SVELTE := true
 
+ifeq ($(TARGET_USES_AOSP), true)
+TARGET_HW_DISK_ENCRYPTION := false
+else
+# SDClang configuration
+SDCLANG := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
+endif
+
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 #Enabling IMS Feature
