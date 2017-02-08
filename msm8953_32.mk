@@ -46,8 +46,8 @@ endif
 
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
-PRODUCT_BOOT_JARS += qcom.fmradio
-PRODUCT_BOOT_JARS += qcmediaplayer
+#PRODUCT_BOOT_JARS += qcom.fmradio
+#PRODUCT_BOOT_JARS += qcmediaplayer
 
 ifneq ($(strip $(QCPATH)),)
    # PRODUCT_BOOT_JARS += WfdCommon
@@ -150,3 +150,6 @@ else
     PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
         ro.logdumpd.enabled=0
 endif
+
+#Keymaster
+PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
