@@ -1,4 +1,5 @@
 TARGET_USES_AOSP := true
+TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
@@ -49,6 +50,10 @@ endif
 #PRODUCT_BOOT_JARS += qcom.fmradio
 #PRODUCT_BOOT_JARS += qcmediaplayer
 
+# add vendor manifest file
+PRODUCT_COPY_FILES += \
+    device/qcom/msm8953_32/vintf.xml:system/vendor/manifest.xml
+
 ifneq ($(strip $(QCPATH)),)
    # PRODUCT_BOOT_JARS += WfdCommon
     PRODUCT_BOOT_JARS += oem-services
@@ -65,6 +70,17 @@ PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
     antradio_app
+
+# Gralloc
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl
+
+# HW Composer
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service
 
 # Feature definition files for msm8953
 PRODUCT_COPY_FILES += \
@@ -153,3 +169,6 @@ endif
 
 #Keymaster
 PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
+
+#Enable Lights Impl HAL Compilation
+PRODUCT_PACKAGES += android.hardware.light@2.0-impl
