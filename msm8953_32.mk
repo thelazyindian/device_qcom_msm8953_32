@@ -52,6 +52,11 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8953_32/seccomp/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
     device/qcom/msm8953_32/seccomp/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
+
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
 #PRODUCT_BOOT_JARS += qcom.fmradio
