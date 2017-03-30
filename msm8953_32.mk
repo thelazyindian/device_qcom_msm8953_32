@@ -4,6 +4,7 @@ TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
+TARGET_DISABLE_DASH := true
 TARGET_USES_QTIC := false
 else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
@@ -48,7 +49,6 @@ endif
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
 #PRODUCT_BOOT_JARS += qcom.fmradio
-#PRODUCT_BOOT_JARS += qcmediaplayer
 
 # add vendor manifest file
 PRODUCT_COPY_FILES += \
@@ -123,6 +123,9 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8953_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
     device/qcom/msm8953_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
 
+ifneq ($(TARGET_DISABLE_DASH), true)
+    PRODUCT_BOOT_JARS += qcmediaplayer
+endif
 
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
