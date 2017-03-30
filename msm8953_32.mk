@@ -5,12 +5,9 @@ TARGET_USES_QCOM_BSP := false
 ifeq ($(TARGET_USES_AOSP),true)
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 TARGET_DISABLE_DASH := true
-TARGET_USES_QTIC := false
 else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
-TARGET_USES_QTIC := true
--include $(QCPATH)/common/config/qtic-config.mk
 endif
 
 TARGET_USES_NQ_NFC := false
@@ -18,6 +15,8 @@ TARGET_KERNEL_VERSION := 3.18
 
 # Enable features in video HAL that can compile only on this platform
 TARGET_USES_MEDIA_EXTENSIONS := false
+
+-include $(QCPATH)/common/config/qtic-config.mk
 
 # media_profiles and media_codecs xmls for msm8953
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
@@ -175,7 +174,7 @@ ifeq ($(findstring perf,$(KERNEL_DEFCONFIG)),)
         PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
             ro.logdumpd.enabled=0
     else
-        PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
+        #PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
             ro.logdumpd.enabled=1
     endif
 else
