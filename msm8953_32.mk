@@ -45,6 +45,13 @@ ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
     MULTI_LANG_ENGINE := REVERIE
 #   MULTI_LANG_ZAWGYI := REVERIE
 endif
+# video seccomp policy files
+# copy to system/vendor as well (since some devices may symlink to system/vendor and not create an actual partition for vendor)
+PRODUCT_COPY_FILES += \
+    device/qcom/msm8953_32/seccomp/mediacodec-seccomp.policy:vendor/etc/seccomp_policy/mediacodec.policy \
+    device/qcom/msm8953_32/seccomp/mediaextractor-seccomp.policy:vendor/etc/seccomp_policy/mediaextractor.policy \
+    device/qcom/msm8953_32/seccomp/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    device/qcom/msm8953_32/seccomp/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
