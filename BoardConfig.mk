@@ -149,9 +149,6 @@ endif
 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
-#Enabling IMS Feature
-TARGET_USES_IMS := false
-
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
