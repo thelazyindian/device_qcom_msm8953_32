@@ -131,8 +131,6 @@ TARGET_BOARD_SUFFIX := _32
 ifeq ($(TARGET_USES_AOSP), true)
 TARGET_HW_DISK_ENCRYPTION := false
 else
-# SDClang configuration
-SDCLANG := true
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
 endif
