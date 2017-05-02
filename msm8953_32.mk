@@ -3,15 +3,15 @@ TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 TARGET_DISABLE_DASH := true
 else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 endif
 
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
+
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Enable features in video HAL that can compile only on this platform
 TARGET_USES_MEDIA_EXTENSIONS := true
