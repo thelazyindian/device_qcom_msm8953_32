@@ -162,6 +162,10 @@ PRODUCT_BOOT_JARS += telephony-ext
 #PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
 
+# Powerhint configuration file
+PRODUCT_COPY_FILES += \
+     device/qcom/msm8953_32/powerhint.xml:system/etc/powerhint.xml
+
 #for android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
