@@ -1,17 +1,17 @@
 TARGET_USES_AOSP := true
-TARGET_USES_AOSP_FOR_AUDIO := true
+TARGET_USES_AOSP_FOR_AUDIO := false
 TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := false
 TARGET_DISABLE_DASH := true
 else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
-TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 endif
 
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
+
+TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Enable features in video HAL that can compile only on this platform
 TARGET_USES_MEDIA_EXTENSIONS := true
@@ -76,22 +76,27 @@ endif
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8953/msm8953.mk
 
+PRODUCT_PACKAGES += android.hardware.media.omx@1.0-impl
+
 # ANT+ stack
 PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
     antradio_app
 
-# Gralloc
+# Display/Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl
-
-# HW Composer
-PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
+    android.hardware.configstore@1.0-service
+
 
 # Camera configuration file. Shared by passthrough/binderized camera HAL
 PRODUCT_PACKAGES += camera.device@3.2-impl
