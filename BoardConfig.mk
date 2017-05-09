@@ -78,6 +78,12 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Use signed boot and recovery image
 #TARGET_BOOTIMG_SIGNED := true
 
+ifeq ($(ENABLE_VENDOR_IMAGE), true)
+TARGET_RECOVERY_FSTAB := device/qcom/msm8953_32/recovery_vendor_variant.fstab
+else
+TARGET_RECOVERY_FSTAB := device/qcom/msm8953_32/recovery.fstab
+endif
+
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
