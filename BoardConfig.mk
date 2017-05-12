@@ -147,7 +147,7 @@ TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 TARGET_USES_IMS := false
 
 # Enable sensor multi HAL
-#USE_SENSOR_MULTI_HAL := true
+USE_SENSOR_MULTI_HAL := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
