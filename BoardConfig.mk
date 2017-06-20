@@ -77,7 +77,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Use signed boot and recovery image
 #TARGET_BOOTIMG_SIGNED := true
-
 ifeq ($(ENABLE_VENDOR_IMAGE), true)
 TARGET_RECOVERY_FSTAB := device/qcom/msm8953_32/recovery_vendor_variant.fstab
 else
@@ -88,7 +87,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 #TARGET_USES_AOSP := true
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78af000
 #BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_SECCOMP_POLICY := device/qcom/msm8953_32/seccomp
@@ -98,11 +97,18 @@ BOARD_EGL_CFG := device/qcom/msm8953_32/egl.cfg
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x02000000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 9999220736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 9695105024
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_OEMIMAGE_PARTITION_SIZE := 268435456
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+
+ifeq ($(ENABLE_VENDOR_IMAGE), true)
+BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+VENDOR_FSTAB_ENTRY := "/dev/block/bootdevice/by-name/vendor     /vendor            ext4   ro,barrier=1,discard                             wait,verify"
+endif
 
 # Enable MDTP During Recovery
 TARGET_USE_MDTP := true
@@ -142,9 +148,6 @@ TARGET_HW_DISK_ENCRYPTION := true
 endif
 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
-
-#Enabling IMS Feature
-TARGET_USES_IMS := false
 
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
