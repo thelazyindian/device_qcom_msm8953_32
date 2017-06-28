@@ -161,6 +161,11 @@ endif
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
+
+#for wlan
+PRODUCT_PACKAGES += \
+    wificond \
+    wifilogd
 #ANT+ stack
 PRODUCT_PACKAGES += \
 AntHalService \
