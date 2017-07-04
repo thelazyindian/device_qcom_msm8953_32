@@ -8,6 +8,7 @@ else
 DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
 endif
 
+BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
 
@@ -72,7 +73,7 @@ PRODUCT_PACKAGES += \
 
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
-#PRODUCT_BOOT_JARS += qcom.fmradio
+PRODUCT_BOOT_JARS += qcom.fmradio
 
 # add vendor manifest file
 PRODUCT_COPY_FILES += \
