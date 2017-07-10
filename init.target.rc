@@ -72,7 +72,7 @@ on post-fs-data
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
-    mkdir /data/misc/hbtp 0750 system system
+    mkdir /data/vendor/hbtp 0750 system system
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
