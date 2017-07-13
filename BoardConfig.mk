@@ -107,7 +107,7 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 BOARD_VENDORIMAGE_PARTITION_SIZE := 1073741824
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-VENDOR_FSTAB_ENTRY := "/dev/block/bootdevice/by-name/vendor     /vendor            ext4   ro,barrier=1,discard                             wait,verify"
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 endif
 
 # Enable MDTP During Recovery
@@ -125,6 +125,7 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_HWC2 := true
 TARGET_USES_GRALLOC1 := true
+TARGET_USES_COLOR_METADATA := true
 
 #TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm
 TARGET_INIT_VENDOR_LIB := libinit_msm

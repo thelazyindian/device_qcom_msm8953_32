@@ -111,7 +111,8 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
-    android.hardware.configstore@1.0-service
+    android.hardware.configstore@1.0-service \
+    android.hardware.broadcastradio@1.0-impl
 
 
 # Camera configuration file. Shared by passthrough/binderized camera HAL
@@ -199,13 +200,15 @@ PRODUCT_PACKAGES += android.hardware.health@1.0-impl \
                    android.hardware.health@1.0-service \
                    libhealthd.msm
 
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 #for android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
-     device/qcom/msm8953_32/sensors/hals.conf:system/etc/sensors/hals.conf
+     device/qcom/msm8953_32/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Disable Verity boot feature
 PRODUCT_SUPPORTS_VERITY := true
@@ -228,8 +231,9 @@ else
         ro.logdumpd.enabled=0
 endif
 
-#Keymaster
-PRODUCT_PACKAGES += android.hardware.keymaster@3.0-impl
+PRODUCT_PACKAGES += \
+    vendor.display.color@1.0-service \
+    vendor.display.color@1.0-impl
 
 #Enable Lights Impl HAL Compilation
 PRODUCT_PACKAGES += android.hardware.light@2.0-impl
