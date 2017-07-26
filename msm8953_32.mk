@@ -58,11 +58,11 @@ PRODUCT_DEVICE := msm8953_32
 
 # When can normal compile this module,  need module owner enable below commands
 # font rendering engine feature switch
--include $(QCPATH)/common/config/rendering-engine.mk
-ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
-    MULTI_LANG_ENGINE := REVERIE
+#-include $(QCPATH)/common/config/rendering-engine.mk
+#ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
+#    MULTI_LANG_ENGINE := REVERIE
 #   MULTI_LANG_ZAWGYI := REVERIE
-endif
+#endif
 # video seccomp policy files
 PRODUCT_COPY_FILES += \
     device/qcom/msm8953_32/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
