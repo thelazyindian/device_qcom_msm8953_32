@@ -79,7 +79,7 @@ PRODUCT_BOOT_JARS += qcom.fmradio
 
 # add vendor manifest file
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8953_32/vintf.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
+    device/qcom/msm8953_32/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
 
 ifneq ($(strip $(QCPATH)),)
