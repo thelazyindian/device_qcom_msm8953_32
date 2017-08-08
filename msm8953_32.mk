@@ -77,9 +77,8 @@ PRODUCT_PACKAGES += \
                      com.qti.dpmframework
 PRODUCT_BOOT_JARS += qcom.fmradio
 
-# add vendor manifest file
-PRODUCT_COPY_FILES += \
-    device/qcom/msm8953_32/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
+DEVICE_MANIFEST_FILE := device/qcom/msm8953_32/manifest.xml
+DEVICE_MATRIX_FILE   := device/qcom/common/compatibility_matrix.xml
 
 
 ifneq ($(strip $(QCPATH)),)
