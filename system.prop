@@ -23,6 +23,7 @@ ro.telephony.default_network=22,20
 
 debug.sf.enable_hwc_vds=1
 debug.sf.hw=1
+debug.sf.latch_unsignaled=1
 debug.egl.hw=1
 persist.hwc.mdpcomp.enable=true
 debug.mdpcomp.logs=0
@@ -136,8 +137,8 @@ persist.mm.sta.enable=0
 persist.qfp=false
 
 #min/max cpu in core control
-ro.core_ctl_min_cpu=2
-ro.core_ctl_max_cpu=4
+ro.vendor.qti.core_ctl_min_cpu=2
+ro.vendor.qti.core_ctl_max_cpu=4
 
 #HWUI properties
 ro.hwui.texture_cache_size=72
