@@ -165,12 +165,8 @@ TARGET_BOARD_SUFFIX := _32
 #MALLOC_IMPL := dlmalloc
 #MALLOC_SVELTE := true
 
-ifeq ($(TARGET_USES_AOSP), true)
-TARGET_HW_DISK_ENCRYPTION := false
-else
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
-endif
 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
