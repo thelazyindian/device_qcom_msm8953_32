@@ -4,10 +4,9 @@ TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
 TARGET_DISABLE_DASH := true
-else
-DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
 endif
 
+DEVICE_PACKAGE_OVERLAYS := device/qcom/msm8953_32/overlay
 BOARD_HAVE_QCOM_FM := true
 TARGET_USES_NQ_NFC := false
 TARGET_KERNEL_VERSION := 3.18
