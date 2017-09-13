@@ -69,6 +69,11 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8953_32/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     device/qcom/msm8953_32/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service \
