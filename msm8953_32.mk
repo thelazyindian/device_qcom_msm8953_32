@@ -154,7 +154,7 @@ PRODUCT_COPY_FILES += \
 
 #wlan driver
 PRODUCT_COPY_FILES += \
-    device/qcom/msm8953_32/WCNSS_qcom_cfg.ini:vendor/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/qcom/msm8953_32/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     device/qcom/msm8953_32/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
     device/qcom/msm8953_32/WCNSS_wlan_dictionary.dat:persist/WCNSS_wlan_dictionary.dat
 
