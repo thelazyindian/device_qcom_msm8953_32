@@ -79,6 +79,8 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service \
     android.hardware.power@1.0-impl
 
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
 #PRODUCT_BOOT_JARS += vcard \
                      com.qti.dpmframework
 PRODUCT_BOOT_JARS += qcom.fmradio
