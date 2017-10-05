@@ -97,6 +97,16 @@ ifneq ($(strip $(QCPATH)),)
    # PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
+#
+# system prop for opengles version
+#
+# 131072 is decimal for 0x20000 to report version 2
+# 196608 is decimal for 0x30000 to report major/minor versions as 3/0
+# 196609 is decimal for 0x30001 to report major/minor versions as 3/1
+# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
+PRODUCT_PROPERTY_OVERRIDES += \
+     ro.opengles.version=196610
+
 # Audio configuration file
 -include $(TOPDIR)hardware/qcom/audio/configs/msm8953/msm8953.mk
 
